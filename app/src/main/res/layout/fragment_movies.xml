@@ -6,9 +6,10 @@
     tools:context=".Fragment_movies">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyc_movies"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp"
+        android:paddingHorizontal="10dp"
         tools:listitem="@layout/movies_item" />
 
 </FrameLayout>

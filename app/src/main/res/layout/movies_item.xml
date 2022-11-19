@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="10dp"
+    android:layout_marginTop="10dp"
     android:backgroundTint="@color/item_color"
     app:cardCornerRadius="30dp">
 
@@ -20,18 +20,11 @@
 
             <TextView
                 android:id="@+id/ranking_movies"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/cambay"
-                android:text="1"
-                android:textColor="@color/black"
-                android:textSize="30sp" />
+                style="@style/For_ranking" />
 
             <ImageView
                 android:id="@+id/movies_img"
-                android:layout_width="90dp"
-                android:layout_height="130dp"
-                android:layout_marginStart="10dp"
+                style="@style/Images_title"
                 android:background="@color/black" />
 
         </LinearLayout>
@@ -44,14 +37,8 @@
 
             <TextView
                 android:id="@+id/film_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
-                android:fontFamily="@font/cambay"
-                android:text="The Shawshank Redemption"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                style="@style/Title_text"
+                android:text="The Shawshank Redemption" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -60,49 +47,33 @@
 
                 <ImageView
                     android:id="@+id/star"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_gravity="start"
-                    android:src="@drawable/star_svgrepo_com" />
+                    style="@style/Star_Icon" />
 
                 <TextView
                     android:id="@+id/imdbRating_movies"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/Texts_inBottomOf_Title"
                     android:layout_marginStart="4dp"
-                    android:fontFamily="@font/cambay"
                     android:text="9.9"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
+                    android:textColor="@color/black" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/Texts_inBottomOf_Title"
                     android:layout_marginStart="20dp"
-                    android:fontFamily="@font/cambay"
                     android:text="year: " />
 
                 <TextView
-                    android:id="@+id/year"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/cambay"
+                    android:id="@+id/year_m"
+                    style="@style/Texts_inBottomOf_Title"
                     android:text="2022"
                     android:textColor="@color/black"
-                    android:textSize="14sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
 
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:maxEms="10"
-                android:fontFamily="@font/cambay"
-                android:text="Francis Ford Coppola (dir.), Marlon Brando, Al Pacino"
-                android:textSize="11sp" />
+                android:id="@+id/crew_movies"
+                style="@style/Text_crew" />
 
         </LinearLayout>
 

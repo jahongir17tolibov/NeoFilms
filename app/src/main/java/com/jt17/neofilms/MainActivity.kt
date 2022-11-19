@@ -2,19 +2,22 @@ package com.jt17.neofilms
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import com.airbnb.lottie.LottieAnimationView
+import com.jt17.neofilms.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val topm = findViewById<LottieAnimationView>(R.id.lottie_mv)
         val animated_icon = findViewById<LottieAnimationView>(R.id.lottie_tvS)
 
-        changeFragment(Fragment_movies())
 
         topm.playAnimation()
         topm.postDelayed({
@@ -41,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             animated_icon.postDelayed({
                 changeFragment(Fragment_shows())
                 animated_icon.pauseAnimation()
-            }, 1000)
+            }, 2000)
         }
 
     }
@@ -55,5 +58,4 @@ class MainActivity : AppCompatActivity() {
             .addToBackStack("TAG")
         fragmentTransaction.commit()
     }
-
 }
