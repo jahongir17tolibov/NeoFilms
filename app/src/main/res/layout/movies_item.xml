@@ -16,11 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:padding="20dp">
-
-            <TextView
-                android:id="@+id/ranking_movies"
-                style="@style/For_ranking" />
+            android:padding="14dp">
 
             <ImageView
                 android:id="@+id/movies_img"
@@ -35,10 +31,21 @@
             android:gravity="center_vertical"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/film_name"
-                style="@style/Title_text"
-                android:text="The Shawshank Redemption" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ranking_movies"
+                    style="@style/For_ranking" />
+
+                <TextView
+                    android:id="@+id/film_name"
+                    style="@style/Title_text"
+                    android:text="The Shawshank Redemption" />
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"

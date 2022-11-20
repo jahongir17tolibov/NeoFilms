@@ -3,110 +3,87 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="10dp"
+    android:layout_marginTop="10dp"
     android:backgroundTint="@color/item_color"
     app:cardCornerRadius="30dp">
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="horizontal">-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:orientation="horizontal"-->
-<!--            android:padding="20dp">-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="14dp">
 
-<!--            <TextView-->
-<!--                android:id="@+id/ranking_shows"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:fontFamily="@font/cambay"-->
-<!--                android:text="1"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textSize="30sp" />-->
+            <ImageView
+                android:id="@+id/shows_img"
+                style="@style/Images_title"
+                android:background="@color/black" />
 
-<!--            <ImageView-->
-<!--                android:id="@+id/shows_img"-->
-<!--                android:layout_width="90dp"-->
-<!--                android:layout_height="130dp"-->
-<!--                android:layout_marginStart="10dp"-->
-<!--                android:background="@color/black" />-->
+        </LinearLayout>
 
-<!--        </LinearLayout>-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:gravity="center_vertical"-->
-<!--            android:orientation="vertical">-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-<!--            <TextView-->
-<!--                android:id="@+id/show_name"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="0dp"-->
-<!--                android:fontFamily="@font/cambay"-->
-<!--                android:text="Euphoria"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textSize="16sp"-->
-<!--                android:textStyle="bold" />-->
+                <TextView
+                    android:id="@+id/ranking_shows"
+                    style="@style/For_ranking" />
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:orientation="horizontal">-->
-
-<!--                <ImageView-->
-<!--                    android:id="@+id/star"-->
-<!--                    android:layout_width="16dp"-->
-<!--                    android:layout_height="16dp"-->
-<!--                    android:layout_gravity="start"-->
-<!--                    android:src="@drawable/star_svgrepo_com" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/imdbRating_shows"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="4dp"-->
-<!--                    android:fontFamily="@font/cambay"-->
-<!--                    android:text="9.9"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="14sp" />-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="20dp"-->
-<!--                    android:fontFamily="@font/cambay"-->
-<!--                    android:text="year: " />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/year_shows"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:fontFamily="@font/cambay"-->
-<!--                    android:text="2022"-->
-<!--                    android:textColor="@color/black"-->
-<!--                    android:textSize="14sp"-->
-<!--                    android:textStyle="bold" />-->
-
-<!--            </LinearLayout>-->
+                <TextView
+                    android:id="@+id/series_name"
+                    style="@style/Title_text"
+                    android:text="The Shawshank Redemption" />
+            </LinearLayout>
 
 
-<!--            <TextView-->
-<!--                android:id="@+id/crew_shows"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="6dp"-->
-<!--                android:maxEms="10"-->
-<!--                android:fontFamily="@font/cambay"-->
-<!--                android:text="Francis Ford Coppola (dir.), Marlon Brando, Al Pacino"-->
-<!--                android:textSize="11sp" />-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-<!--        </LinearLayout>-->
+                <ImageView
+                    android:id="@+id/star"
+                    style="@style/Star_Icon" />
 
-<!--    </LinearLayout>-->
+                <TextView
+                    android:id="@+id/imdbRating_shows"
+                    style="@style/Texts_inBottomOf_Title"
+                    android:layout_marginStart="4dp"
+                    android:text="9.9"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    style="@style/Texts_inBottomOf_Title"
+                    android:layout_marginStart="20dp"
+                    android:text="year: " />
+
+                <TextView
+                    android:id="@+id/year_sh"
+                    style="@style/Texts_inBottomOf_Title"
+                    android:text="2022"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/crew_shows"
+                style="@style/Text_crew" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>

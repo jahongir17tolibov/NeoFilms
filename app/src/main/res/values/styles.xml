@@ -15,10 +15,10 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="fontFamily">@font/cambay</item>
-        <item name="android:textSize">22sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:text">0</item>
+        <item name="android:text">100</item>
     </style>
 
 <!--    MoviesOrShows image item_ly-->
@@ -32,8 +32,9 @@
     <style name="Title_text">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:layout_marginStart">4dp</item>
         <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/cambay</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">16sp</item>
     </style>

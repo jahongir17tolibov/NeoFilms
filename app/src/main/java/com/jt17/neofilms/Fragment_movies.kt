@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.jt17.neofilms.ApiServices.NetManager
 import com.jt17.neofilms.adapters.HomeAdapter
+import com.jt17.neofilms.databinding.FragmentMoviesBinding
 import com.jt17.neofilms.models.imdbApiModel
 import com.jt17.neofilms.models.top250_moviesModel
 import retrofit2.Call
@@ -19,23 +20,25 @@ import retrofit2.Response
 
 class Fragment_movies : Fragment(), Callback<imdbApiModel<List<top250_moviesModel>>> {
 
+    private var _binding: FragmentMoviesBinding? = null
+
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        _binding = FragmentMoviesBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_movies, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        requireActivity().findViewById<RecyclerView>(R.id.recyc_movies).layoutManager = LinearLayoutManager(requireContext())
+        binding.recycMovies.layoutManager = LinearLayoutManager(requireContext())
 
         NetManager.getApiService_topM().getApi_topM("k_jo0bfe4d").enqueue(this)
 
-        Log.d("GetApiData", "Open Fragment_movies")
-
-//        requireActivity().findViewById<RecyclerView>(R.id.recyc_movies).
 
     }
 
@@ -44,12 +47,17 @@ class Fragment_movies : Fragment(), Callback<imdbApiModel<List<top250_moviesMode
         response: Response<imdbApiModel<List<top250_moviesModel>>>
     ) {
         if (response.isSuccessful) {
-            Log.d("GetApiData", "${response.body()}")
-            requireActivity().findViewById<RecyclerView>(R.id.recyc_movies).adapter = HomeAdapter(response.body()!!.items)
+//            Log.d("GetApiData", "${response.body()}")
+            binding.recycMovies.adapter = HomeAdapter(response.body()!!.items)
         }
     }
 
     override fun onFailure(call: Call<imdbApiModel<List<top250_moviesModel>>>, t: Throwable) {
         Toast.makeText(requireContext(), "Check internet connection ;)", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
