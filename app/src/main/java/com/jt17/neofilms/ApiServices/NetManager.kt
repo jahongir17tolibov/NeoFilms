@@ -7,7 +7,7 @@ object NetManager {
     var retrofit: Retrofit? = null
     var api: topM_Api? = null
 
-    fun getApiService_topM(): topM_Api {
+    fun getApiService(): topM_Api {
         if (api == null) {
             retrofit = Retrofit.Builder()
                 .baseUrl("https://imdb-api.com/API/")

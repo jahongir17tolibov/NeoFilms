@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="shimmer_color">#DCDCDC</color>
     <color name="item_color">#E9F2FF</color>
+    <color name="glass">#4FFFFFFF</color>
 </resources>

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
-    android:backgroundTint="@color/item_color"
+    android:backgroundTint="#AFAFAF"
     app:cardCornerRadius="30dp">
 
     <LinearLayout
@@ -19,9 +19,8 @@
             android:padding="14dp">
 
             <ImageView
-                android:id="@+id/shows_img"
                 style="@style/Images_title"
-                android:background="@color/black" />
+                android:background="@color/white" />
 
         </LinearLayout>
 
@@ -34,53 +33,50 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/white"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/ranking_shows"
-                    style="@style/For_ranking" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" />
 
                 <TextView
-                    android:id="@+id/series_name"
-                    style="@style/Title_text"
-                    android:text="Moon Knight" />
+                    android:layout_width="160dp"
+                    android:layout_height="10dp" />
             </LinearLayout>
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/star"
-                    style="@style/Star_Icon" />
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:background="@color/white" />
 
                 <TextView
-                    android:id="@+id/imdbRating_shows"
-                    style="@style/Texts_inBottomOf_Title"
-                    android:layout_marginStart="4dp"
-                    android:text="9.9"
-                    android:textColor="@color/black" />
-
-                <TextView
-                    style="@style/Texts_inBottomOf_Title"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
                     android:layout_marginStart="20dp"
-                    android:text="year: " />
+                    android:background="@color/white" />
 
                 <TextView
-                    android:id="@+id/year_sh"
-                    style="@style/Texts_inBottomOf_Title"
-                    android:text="2022"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:background="@color/white" />
 
             </LinearLayout>
 
 
             <TextView
-                android:id="@+id/crew_shows"
-                style="@style/Text_crew" />
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/white" />
 
         </LinearLayout>
 

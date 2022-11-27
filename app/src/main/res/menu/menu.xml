@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home_btm"
+        android:icon="@drawable/ic_round_home_24"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/seach_btm"
+        android:icon="@drawable/ic_round_search_24"
+        android:title="Search" />
+
+    <item
+        android:id="@+id/movies_btm"
+        android:icon="@drawable/ic_round_movie_24"
+        android:title="Movies" />
+
+    <item
+        android:id="@+id/shows_btm"
+        android:icon="@drawable/ic_baseline_slideshow_24"
+        android:title="Shows" />
+
+
+</menu>

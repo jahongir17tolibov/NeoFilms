@@ -59,6 +59,15 @@
 
     </style>
 
+<!--    universal small texts style-->
+    <style name="Universal_txt">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/cambay</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
 
 </resources>
 <!--    android:id="@+id/crew_movies"-->

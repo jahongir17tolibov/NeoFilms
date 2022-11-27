@@ -1,6 +1,6 @@
 package com.jt17.neofilms.models
 
-data class top250_moviesModel(
+data class mainModel(
     val rank: String,
     val title: String,
     val fullTitle: String,
