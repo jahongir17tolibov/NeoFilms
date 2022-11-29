@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingHorizontal="8dp"
+    android:paddingVertical="4dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="90dp"
+        android:layout_height="130dp">
+
+        <ImageView
+            android:id="@+id/inTh_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/Title_inTh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cambay"
+        android:maxWidth="90dp"
+        android:text="title and (year)"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/release_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cambay"
+        android:maxWidth="90dp"
+        android:text="11 nov 2022"
+        android:textAlignment="center"
+        android:textSize="8sp" />
+
+    <TextView
+        android:id="@+id/genres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cambay"
+        android:maxWidth="90dp"
+        android:text="action adventure,fantastical"
+        android:textAlignment="center"
+        android:textSize="8sp" />
+
+
+</LinearLayout>

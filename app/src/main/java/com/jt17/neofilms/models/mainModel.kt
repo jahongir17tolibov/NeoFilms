@@ -7,5 +7,7 @@ data class mainModel(
     val year: String,
     val image: String,
     val crew: String,
-    val imDbRating: String
+    val imDbRating: String,
+    val releaseState: String,
+    val genres: String
 )

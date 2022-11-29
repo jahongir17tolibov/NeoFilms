@@ -35,7 +35,7 @@ class Fragment_movies : Fragment(), Callback<imdbApiModel<List<mainModel>>> {
     ): View? {
         _binding = FragmentMoviesBinding.inflate(inflater, container, false)
 
-        viewModel2 = ViewModelProvider(requireActivity())[BaseViewModel::class.java]
+//        viewModel2 = ViewModelProvider(requireActivity())[BaseViewModel::class.java]
         // Inflate the layout for this fragment
         return binding.root
     }
@@ -69,11 +69,7 @@ class Fragment_movies : Fragment(), Callback<imdbApiModel<List<mainModel>>> {
                 binding.moviesShimm.stopShimmer()
                 binding.moviesShimm.visibility = View.GONE
                 binding.recycMovies.visibility = View.VISIBLE
-                binding.recycMovies.adapter = HomeAdapter(response.body()!!.items, object : ItemCallback{
-                    override fun itemClickListener(position: Int) {
-                        viewModel2.txt.value = "AAAAAAAADDDDDDDDDDDDD"
-                    }
-                })
+                binding.recycMovies.adapter = HomeAdapter(response.body()!!.items)
             } catch (e: Exception) {
 
             }

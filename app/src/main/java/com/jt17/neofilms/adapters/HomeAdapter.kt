@@ -15,7 +15,7 @@ import com.jt17.neofilms.models.imdbApiModel
 import com.jt17.neofilms.models.mainModel
 import com.squareup.picasso.Picasso
 
-class HomeAdapter(val lists: List<mainModel>, val itemCallback: ItemCallback) :
+class HomeAdapter(val lists: List<mainModel>) :
     RecyclerView.Adapter<HomeAdapter.itemHolder>() {
     inner class itemHolder(val bind: MoviesItemBinding) : RecyclerView.ViewHolder(bind.root)
 
@@ -42,9 +42,9 @@ class HomeAdapter(val lists: List<mainModel>, val itemCallback: ItemCallback) :
             .error(R.drawable.ic_launcher_background)
             .into(holder.bind.moviesImg)
 
-        holder.bind.materialed1.setOnClickListener {
-            itemCallback.itemClickListener(position)
-        }
+//        holder.bind.materialed1.setOnClickListener {
+//            itemCallback.itemClickListener(position)
+//        }
     }
 
     override fun getItemCount(): Int = lists.size
