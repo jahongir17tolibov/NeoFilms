@@ -6,10 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jt17.neofilms.R
 import com.jt17.neofilms.databinding.InthItemBinding
 import com.jt17.neofilms.models.NestedModel
-import com.jt17.neofilms.models.mainModel
 import com.squareup.picasso.Picasso
 
-class NestedAdapter(val list: List<mainModel>) :
+class NestedAdapter(val list: List<NestedModel.InTheatresModel>) :
     RecyclerView.Adapter<NestedAdapter.nestedHolder>() {
 
     inner class nestedHolder(val bind: InthItemBinding) : RecyclerView.ViewHolder(bind.root)

@@ -10,7 +10,8 @@
             android:id="@+id/frameLayout2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingHorizontal="20dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="16dp"
             android:paddingVertical="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,10 +46,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/cambay"
-                android:text="Black Panther: Wakanda Forever"
+                android:maxWidth="230dp"
+                android:text="Black Panther: Wakanda Forevermef vneovneoi nvoenveo"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <LinearLayout

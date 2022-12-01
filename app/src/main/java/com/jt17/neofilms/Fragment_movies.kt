@@ -35,21 +35,14 @@ class Fragment_movies : Fragment(), Callback<imdbApiModel<List<mainModel>>> {
     ): View? {
         _binding = FragmentMoviesBinding.inflate(inflater, container, false)
 
-//        viewModel2 = ViewModelProvider(requireActivity())[BaseViewModel::class.java]
-        // Inflate the layout for this fragment
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.recycMovies.layoutManager = LinearLayoutManager(requireContext())
+//        viewModel2 = ViewModelProvider(requireActivity())[BaseViewModel::class.java]
 
-//        val anim: SpringAnimation = SpringAnimation(binding.recycMovies, SpringAnimation.TRANSLATION_Y)
-//            .setSpring(SpringForce()
-//                .setFinalPosition(0f)
-//                .setDampingRatio(SpringForce.DAMPING_RATIO_MEDIUM_BOUNCY)
-//                .setStiffness(SpringForce.STIFFNESS_LOW)
-//            )
+        binding.recycMovies.layoutManager = LinearLayoutManager(requireContext())
 
         binding.moviesShimm.startShimmer()
 
