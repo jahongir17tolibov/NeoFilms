@@ -9,11 +9,11 @@ import com.jt17.neofilms.models.mainModel
 import com.squareup.picasso.Picasso
 
 class ShowsAdapter(val list: List<mainModel>) :
-    RecyclerView.Adapter<ShowsAdapter.itemHolder>() {
-    inner class itemHolder(val bind: ShowsItemBinding) : RecyclerView.ViewHolder(bind.root)
+    RecyclerView.Adapter<ShowsAdapter.ItemHolder>() {
+    inner class ItemHolder(val bind: ShowsItemBinding) : RecyclerView.ViewHolder(bind.root)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): itemHolder {
-        return itemHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
+        return ItemHolder(
             ShowsItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
@@ -22,7 +22,7 @@ class ShowsAdapter(val list: List<mainModel>) :
         )
     }
 
-    override fun onBindViewHolder(holder: itemHolder, position: Int) {
+    override fun onBindViewHolder(holder: ItemHolder, position: Int) {
         val itemData = list[position]
 
         holder.bind.rankingShows.text = itemData.rank

@@ -18,14 +18,13 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:text">100</item>
     </style>
 
 <!--    MoviesOrShows image item_ly-->
     <style name="Images_title">
         <item name="android:layout_height">130dp</item>
         <item name="android:layout_width">90dp</item>
-        <item name="android:layout_marginStart">10dp</item>
+<!--        <item name="android:layout_marginStart">10dp</item>-->
     </style>
 
 <!--    For title Movie or Shows name item_ly-->
@@ -52,9 +51,8 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_marginTop">6dp</item>
-        <item name="android:maxEms">10</item>
         <item name="android:textSize">11sp</item>
-        <item name="android:text">Francis Ford Coppola (dir.), Marlon Brando, Al Pacino</item>
+        <item name="android:layout_marginEnd">10dp</item>
         <item name="fontFamily">@font/cambay</item>
 
     </style>
@@ -66,6 +64,12 @@
         <item name="fontFamily">@font/cambay</item>
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Black_Frame_Line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1.5dp</item>
+        <item name="background">@color/black</item>
     </style>
 
 

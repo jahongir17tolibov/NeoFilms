@@ -1,6 +1,6 @@
 package com.jt17.neofilms.ApiServices
 
-import com.jt17.neofilms.models.NestedModel
+import com.jt17.neofilms.models.InTheatresModel
 import com.jt17.neofilms.models.imdbApiModel
 import com.jt17.neofilms.models.mainModel
 import retrofit2.Call
@@ -15,9 +15,10 @@ interface topM_Api {
         @Path("key") key: String
     ): Call<imdbApiModel<List<mainModel>>>
 
+    //In theaters Getter
     @GET("{func}/{key}")
     fun getInTheatresApi(
         @Path("func") func: String,
         @Path("key") key: String
-    ): Call<imdbApiModel<List<NestedModel.InTheatresModel>>>
+    ): Call<imdbApiModel<List<InTheatresModel>>>
 }

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/materialed1"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/materialed1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
     android:backgroundTint="@color/item_color"
-    app:cardCornerRadius="30dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,10 +20,19 @@
             android:orientation="horizontal"
             android:padding="14dp">
 
-            <ImageView
-                android:id="@+id/movies_img"
+            <androidx.cardview.widget.CardView
                 style="@style/Images_title"
-                android:background="@color/black" />
+                app:cardCornerRadius="8dp">
+
+                <ImageView
+                    android:id="@+id/movies_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"
+                    android:scaleType="centerCrop" />
+
+            </androidx.cardview.widget.CardView>
+
 
         </LinearLayout>
 
@@ -39,7 +49,8 @@
 
                 <TextView
                     android:id="@+id/ranking_movies"
-                    style="@style/For_ranking" />
+                    style="@style/For_ranking"
+                    tools:text="100"/>
 
                 <TextView
                     android:id="@+id/film_name"
@@ -61,7 +72,7 @@
                     android:id="@+id/imdbRating_movies"
                     style="@style/Texts_inBottomOf_Title"
                     android:layout_marginStart="4dp"
-                    android:text="9.9"
+                    tools:text="9.9"
                     android:textColor="@color/black" />
 
                 <TextView
@@ -72,7 +83,7 @@
                 <TextView
                     android:id="@+id/year_m"
                     style="@style/Texts_inBottomOf_Title"
-                    android:text="2022"
+                    tools:text="2022"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
 
@@ -81,7 +92,10 @@
 
             <TextView
                 android:id="@+id/crew_movies"
-                style="@style/Text_crew" />
+                style="@style/Text_crew"
+                tools:text="@tools:sample/lorem/random"
+                android:maxLines="3"
+                android:minLines="3"/>
 
         </LinearLayout>
 

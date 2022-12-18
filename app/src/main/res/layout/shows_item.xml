@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
     android:backgroundTint="@color/item_color"
-    app:cardCornerRadius="30dp">
+    app:cardCornerRadius="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,10 +18,17 @@
             android:orientation="horizontal"
             android:padding="14dp">
 
-            <ImageView
-                android:id="@+id/shows_img"
-                style="@style/Images_title"
-                android:background="@color/black" />
+            <androidx.cardview.widget.CardView style="@style/Images_title"
+                app:cardCornerRadius="8dp">
+
+                <ImageView
+                    android:id="@+id/shows_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"
+                    android:scaleType="centerCrop" />
+            </androidx.cardview.widget.CardView>
+
 
         </LinearLayout>
 

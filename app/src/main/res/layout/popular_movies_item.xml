@@ -1,89 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/constarint_background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constarint_background"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-        <FrameLayout
-            android:id="@+id/frameLayout2"
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingVertical="10dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="90dp"
+            android:layout_height="130dp"
+            app:cardCornerRadius="8dp">
+
+            <ImageView
+                android:id="@+id/popularM_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:scaleType="centerCrop" />
+
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout2"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/popularM_title"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:paddingEnd="10dp"
-            android:paddingStart="16dp"
-            android:paddingVertical="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="90dp"
-                android:layout_height="130dp">
-
-                <ImageView
-                    android:id="@+id/popularM_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/black" />
-
-            </androidx.cardview.widget.CardView>
-
-        </FrameLayout>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/cambay"
+            android:layout_marginHorizontal="16dp"
+            tools:text="@tools:sample/lorem/random"
+            android:maxLines="3"
+            android:minLines="3"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/frameLayout2"
-            app:layout_constraintTop_toTopOf="parent">
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/popularM_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Universal_txt"
+                android:text="year :" />
+
+            <TextView
+                android:id="@+id/popularM_year"
+                style="@style/Universal_txt"
+                android:layout_marginStart="4dp"
+                tools:text="2222" />
+
+            <ImageView
+                style="@style/Star_Icon"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:layout_gravity="center"
-                android:fontFamily="@font/cambay"
-                android:maxWidth="230dp"
-                android:text="Black Panther: Wakanda Forevermef vneovneoi nvoenveo"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:layout_marginStart="50dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/Universal_txt"
-                    android:text="year :" />
-
-                <TextView
-                    android:id="@+id/popularM_year"
-                    style="@style/Universal_txt"
-                    android:layout_marginStart="4dp"
-                    android:text="2222" />
-
-                <ImageView
-                    style="@style/Star_Icon"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="50dp" />
-
-                <TextView
-                    android:id="@+id/imdbRating_popularM"
-                    style="@style/Universal_txt"
-                    android:layout_marginStart="4dp"
-                    android:text="9.9" />
-
-            </LinearLayout>
+            <TextView
+                android:id="@+id/imdbRating_popularM"
+                style="@style/Universal_txt"
+                android:layout_marginStart="4dp"
+                tools:text="9.9" />
 
         </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

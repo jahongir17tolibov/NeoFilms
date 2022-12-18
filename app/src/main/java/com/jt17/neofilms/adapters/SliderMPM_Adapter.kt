@@ -8,8 +8,7 @@ import com.jt17.neofilms.models.mainModel
 import com.smarteist.autoimageslider.SliderViewAdapter
 import com.squareup.picasso.Picasso
 
-class SliderMPM_Adapter(private val list: List<mainModel>) :
-    SliderViewAdapter<SliderMPM_Adapter.itemHolder>() {
+class SliderMPM_Adapter(val baseList: List<mainModel>) : SliderViewAdapter<SliderMPM_Adapter.itemHolder>() {
 
     inner class itemHolder(val bind: PopularMoviesItemBinding) :
         SliderViewAdapter.ViewHolder(bind.root)
@@ -24,8 +23,10 @@ class SliderMPM_Adapter(private val list: List<mainModel>) :
         )
     }
 
+
+
     override fun onBindViewHolder(viewHolder: itemHolder?, position: Int) {
-        val itemdata = list[position]
+        val itemdata = baseList[position]
         viewHolder?.bind?.popularMTitle?.text = itemdata.title
         viewHolder?.bind?.imdbRatingPopularM?.text = itemdata.imDbRating
         viewHolder?.bind?.popularMYear?.text = itemdata.year
@@ -34,6 +35,6 @@ class SliderMPM_Adapter(private val list: List<mainModel>) :
             .into(viewHolder?.bind?.popularMImage)
     }
 
-    override fun getCount(): Int = list.size
+    override fun getCount(): Int = baseList.size
 
 }

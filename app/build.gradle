@@ -61,8 +61,8 @@ dependencies {
     //lottie files
     implementation 'com.airbnb.android:lottie:3.4.0'
 
-    //recyclerview effects
-    implementation "androidx.dynamicanimation:dynamicanimation:1.0.0"
+    //recyclerview bounce effects
+    implementation 'com.chauthai.overscroll:overscroll-bouncy:0.1.1'
 
     //slider
     implementation 'com.github.smarteist:autoimageslider:1.4.0'
@@ -74,6 +74,10 @@ dependencies {
 
     //recyclerview help
     implementation "androidx.recyclerview:recyclerview:1.2.1"
+
     //swiperefreshlayout
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    //hawk pref
+    implementation "com.orhanobut:hawk:2.0.1"
 }

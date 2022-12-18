@@ -1,53 +1,42 @@
-package com.jt17.neofilms
+package com.jt17.neofilms.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.dynamicanimation.animation.SpringAnimation
-import androidx.dynamicanimation.animation.SpringForce
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.jt17.neofilms.ApiServices.NetManager
-import com.jt17.neofilms.adapters.HomeAdapter
-import com.jt17.neofilms.adapters.ItemCallback
-import com.jt17.neofilms.databinding.FragmentMoviesBinding
+import com.jt17.neofilms.adapters.ShowsAdapter
+import com.jt17.neofilms.databinding.FragmentShowsBinding
 import com.jt17.neofilms.models.imdbApiModel
 import com.jt17.neofilms.models.mainModel
-import com.jt17.neofilms.viewmodel.BaseViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class Fragment_movies : Fragment(), Callback<imdbApiModel<List<mainModel>>> {
-    private var _binding: FragmentMoviesBinding? = null
+class Fragment_shows : Fragment(), Callback<imdbApiModel<List<mainModel>>> {
+    private var _binding: FragmentShowsBinding? = null
     private val binding get() = _binding!!
-
-    lateinit var viewModel2: BaseViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentMoviesBinding.inflate(inflater, container, false)
-
+        // Inflate the layout for this fragment
+        _binding = FragmentShowsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        viewModel2 = ViewModelProvider(requireActivity())[BaseViewModel::class.java]
 
-        binding.recycMovies.layoutManager = LinearLayoutManager(requireContext())
+        binding.recycShows.layoutManager = LinearLayoutManager(requireContext())
 
-        binding.moviesShimm.startShimmer()
+        binding.showsShimm.startShimmer()
 
-        NetManager.getApiService().getApi_topM("Top250Movies", "k_jo0bfe4d").enqueue(this)
-
+        NetManager.getApiService().getApi_topM("Top250TVs", "k_jo0bfe4d").enqueue(this)
 
     }
 
@@ -56,13 +45,11 @@ class Fragment_movies : Fragment(), Callback<imdbApiModel<List<mainModel>>> {
         response: Response<imdbApiModel<List<mainModel>>>
     ) {
         if (response.isSuccessful) {
-//            Log.d("GetApiData", "${response.body()}")
-
             try {
-                binding.moviesShimm.stopShimmer()
-                binding.moviesShimm.visibility = View.GONE
-                binding.recycMovies.visibility = View.VISIBLE
-                binding.recycMovies.adapter = HomeAdapter(response.body()!!.items)
+                binding.showsShimm.stopShimmer()
+                binding.showsShimm.visibility = View.GONE
+                binding.recycShows.visibility = View.VISIBLE
+                binding.recycShows.adapter = ShowsAdapter(response.body()!!.items)
             } catch (e: Exception) {
 
             }
