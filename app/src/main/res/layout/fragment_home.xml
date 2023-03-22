@@ -4,13 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.Fragment_home">
+    tools:context=".ui.fragments.HomeFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            style="@style/Widget.Material3.Toolbar.Surface"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="snap|scroll"
+            app:title="@string/app_name"
+            app:titleCentered="true"
+            app:titleTextColor="@color/light_dark_color">
+
+            <ImageView
+                android:id="@+id/light_dark_button"
+                style="@style/light_or_dark_mode" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:swipeRefreshLayoutProgressSpinnerBackgroundColor="#A82F00">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -26,9 +49,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/cambay"
-                    android:text="Popular films sorting by IMDb"
-                    android:textColor="@color/black"
+                    android:elegantTextHeight="true"
+                    android:fontFamily="@font/mada"
+                    android:text="Coming Soon..."
+                    android:textColor="@color/light_dark_color"
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
@@ -38,11 +62,11 @@
                     android:layout_height="180dp"
                     android:layout_margin="10dp"
                     app:cardCornerRadius="16dp"
-                    app:strokeColor="@color/black"
+                    app:strokeColor="@color/for_lines"
                     app:strokeWidth="4dp">
 
                     <com.smarteist.autoimageslider.SliderView
-                        android:id="@+id/popularM_slider"
+                        android:id="@+id/coming_soon_slider"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:nestedScrollingEnabled="false"
@@ -54,9 +78,9 @@
                         app:sliderIndicatorMargin="15dp"
                         app:sliderIndicatorOrientation="horizontal"
                         app:sliderIndicatorPadding="3dp"
-                        app:sliderIndicatorRadius="2dp"
-                        app:sliderIndicatorSelectedColor="#4A148C"
-                        app:sliderIndicatorUnselectedColor="#5A5A5A"
+                        app:sliderIndicatorRadius="1.5dp"
+                        app:sliderIndicatorSelectedColor="@color/white"
+                        app:sliderIndicatorUnselectedColor="@color/glass"
                         app:sliderScrollTimeInSec="1"
                         app:sliderStartAutoCycle="true" />
 
@@ -65,19 +89,23 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical">
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
-                        android:fontFamily="@font/cambay"
+                        android:layout_marginStart="8dp"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/mada_light"
                         android:text="In Theaters"
-                        android:textColor="@color/black"
+                        android:textAllCaps="true"
+                        android:textColor="@color/light_dark_color"
                         android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <ImageView
+                        android:id="@+id/in_theaters_more_btn"
                         android:layout_width="32dp"
                         android:layout_height="32dp"
                         android:layout_marginStart="8dp"
@@ -86,7 +114,7 @@
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/nested_recyc_home"
+                    android:id="@+id/in_theaters_recyc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:nestedScrollingEnabled="false"
@@ -94,10 +122,83 @@
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/inth_item" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/mada_light"
+                        android:text="popular movies"
+                        android:textAllCaps="true"
+                        android:textColor="@color/light_dark_color"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/pop_movies_more_btn"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/arrow_right_svgrepo_com" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/popular_movies_recyc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/popular_movies_item"
+                    tools:orientation="horizontal" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/mada_light"
+                        android:text="popular TV shows"
+                        android:textAllCaps="true"
+                        android:textColor="@color/light_dark_color"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/pop_tvShows_more_btn"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/arrow_right_svgrepo_com" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/popular_shows_recyc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/popular_movies_item"
+                    tools:orientation="horizontal" />
+
             </LinearLayout>
 
 
         </androidx.core.widget.NestedScrollView>
+
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 

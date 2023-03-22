@@ -1,67 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/materialed1"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
     android:layout_marginTop="10dp"
-    android:backgroundTint="@color/item_color"
-    xmlns:tools="http://schemas.android.com/tools"
-    app:cardCornerRadius="16dp">
+    android:backgroundTint="@color/neoFilm_main_background_color"
+    app:cardCornerRadius="12dp"
+    app:strokeColor="@color/md_theme_light_onTertiaryContainer"
+    app:strokeWidth="2dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:padding="14dp">
+        <FrameLayout
+            android:layout_width="105dp"
+            android:layout_height="150dp">
 
-            <androidx.cardview.widget.CardView
-                style="@style/Images_title"
-                app:cardCornerRadius="8dp">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/movies_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/shapedImage_dp_edition"
+                tools:src="@tools:sample/backgrounds/scenic" />
 
-                <ImageView
-                    android:id="@+id/movies_img"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/black"
-                    android:scaleType="centerCrop" />
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/image_background_alpha" />
 
-            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/ranking_movies"
+                style="@style/For_ranking"
+                android:layout_gravity="center_horizontal|start"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                tools:text="100" />
 
-
-        </LinearLayout>
+        </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="24dp"
             android:gravity="center_vertical"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/ranking_movies"
-                    style="@style/For_ranking"
-                    tools:text="100"/>
-
-                <TextView
-                    android:id="@+id/film_name"
-                    style="@style/Title_text"
-                    android:text="The Shawshank Redemption" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/film_name"
+                style="@style/Title_text"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:maxLines="1"
+                tools:text="The Shawshank RedemptionRedemptionRedemptionRedemption" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -72,8 +74,8 @@
                     android:id="@+id/imdbRating_movies"
                     style="@style/Texts_inBottomOf_Title"
                     android:layout_marginStart="4dp"
-                    tools:text="9.9"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/light_dark_color"
+                    tools:text="9.9" />
 
                 <TextView
                     style="@style/Texts_inBottomOf_Title"
@@ -83,9 +85,7 @@
                 <TextView
                     android:id="@+id/year_m"
                     style="@style/Texts_inBottomOf_Title"
-                    tools:text="2022"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
+                    tools:text="2022" />
 
             </LinearLayout>
 
@@ -93,9 +93,11 @@
             <TextView
                 android:id="@+id/crew_movies"
                 style="@style/Text_crew"
-                tools:text="@tools:sample/lorem/random"
+                android:layout_height="0dp"
+                android:layout_weight="2"
                 android:maxLines="3"
-                android:minLines="3"/>
+                android:minLines="3"
+                tools:text="@tools:sample/lorem/random" />
 
         </LinearLayout>
 

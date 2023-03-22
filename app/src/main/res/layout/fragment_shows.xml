@@ -4,40 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.Fragment_shows">
+    android:fitsSystemWindows="true"
+    tools:context=".ui.fragments.ShowsFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyc_shows"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/shows_item"
+        tools:visibility="visible" />
 
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shows_shimm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:shimmer_intensity="20"
-        app:shimmer_shape="radial">
+        app:shimmer_shape="radial"
+        tools:visibility="visible">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <include layout="@layout/shimmer_shows" />
+            <include layout="@layout/shimmer_ly" />
 
-            <include layout="@layout/shimmer_shows" />
+            <include layout="@layout/shimmer_ly" />
 
-            <include layout="@layout/shimmer_shows" />
+            <include layout="@layout/shimmer_ly" />
 
-            <include layout="@layout/shimmer_shows" />
+            <include layout="@layout/shimmer_ly" />
 
-            <include layout="@layout/shimmer_shows" />
+            <include layout="@layout/shimmer_ly" />
 
         </LinearLayout>
 
     </com.facebook.shimmer.ShimmerFrameLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyc_shows"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="10dp"
-        android:visibility="gone"
-        tools:listitem="@layout/shows_item" />
 
 </FrameLayout>

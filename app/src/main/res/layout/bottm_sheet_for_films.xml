@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:background="@drawable/bottm_sheet_bckg"
     android:orientation="vertical">
 
@@ -14,8 +15,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
-        android:backgroundTint="@color/purple_500"
-        android:selectAllOnFocus="true"
+        android:backgroundTint="#18205A"
         app:cornerRadius="80dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,32 +23,25 @@
         android:layout_height="wrap_content"
         android:layout_margin="4dp">
 
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/materialCardView2"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/BSH_inTheaters_img"
             android:layout_width="110dp"
             android:layout_height="160dp"
             android:layout_margin="10dp"
-            app:cardCornerRadius="20dp"
+            android:scaleType="centerCrop"
+            tools:background="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/BSH_inTheaters_img"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop" />
-
-        </com.google.android.material.card.MaterialCardView>
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapedImage_idealism" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="@+id/materialCardView2"
-            app:layout_constraintStart_toStartOf="@+id/materialCardView2"
-            app:layout_constraintTop_toBottomOf="@id/materialCardView2">
+            app:layout_constraintEnd_toEndOf="@+id/BSH_inTheaters_img"
+            app:layout_constraintStart_toStartOf="@+id/BSH_inTheaters_img"
+            app:layout_constraintTop_toBottomOf="@id/BSH_inTheaters_img">
 
             <!--            film's duration-->
             <LinearLayout
@@ -62,24 +55,23 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/cambay"
+                    android:fontFamily="@font/mada_semibold"
                     android:text="Duration: "
-                    android:textColor="@color/black"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/light_dark_color"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/BSH_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/cambay"
+                    android:fontFamily="@font/mada"
                     android:text="108"
                     android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/cambay"
+                    android:fontFamily="@font/mada"
                     android:text=" min"
                     android:textSize="12sp" />
 
@@ -97,18 +89,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/cambay"
+                    android:fontFamily="@font/mada_semibold"
                     android:text="Content rating: "
-                    android:textColor="@color/black"
+                    android:textColor="@color/light_dark_color"
                     android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/content_rating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/cambay"
+                    android:fontFamily="@font/mada"
                     android:text="R"
-                    android:textColor="@color/purple_500"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -125,20 +116,19 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/cambay"
-                    android:text="imDb rating: "
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
+                    android:fontFamily="@font/mada_semibold"
+                    android:textColor="@color/light_dark_color"
+                    android:textSize="12sp"
+                    tools:text="imDb rating: " />
 
                 <TextView
                     android:id="@+id/_BSH_imdbRating_rating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
-                    android:fontFamily="@font/cambay"
-                    android:text="8.8"
-                    android:textColor="#FFA000"
-                    android:textSize="12sp" />
+                    android:fontFamily="@font/mada"
+                    android:textSize="12sp"
+                    tools:text="8.8" />
 
             </LinearLayout>
 
@@ -153,18 +143,17 @@
             android:paddingStart="20dp"
             android:paddingEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/materialCardView2"
-            app:layout_constraintTop_toTopOf="@+id/materialCardView2">
+            app:layout_constraintStart_toEndOf="@+id/BSH_inTheaters_img"
+            app:layout_constraintTop_toTopOf="@+id/BSH_inTheaters_img">
 
             <TextView
                 android:id="@+id/BSH_inTh_title"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:layout_weight="1"
-                android:fontFamily="@font/cambay"
-                android:textColor="@color/black"
+                android:fontFamily="@font/mada_semibold"
+                android:textColor="@color/light_dark_color"
                 android:textSize="26sp"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="@string/app_name" />
@@ -174,22 +163,23 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/cambay"
-                    android:textColor="@color/black"
+                    android:fontFamily="@font/mada_semibold"
+                    android:text="Release Date: "
+                    android:textColor="@color/light_dark_color"
                     android:textSize="14sp"
-                    android:textStyle="bold"
-                    tools:text="Release Date: " />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/BSH_InTh_realase"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/cambay"
+                    android:fontFamily="@font/mada"
                     android:textSize="14sp"
                     tools:text="18 nov 2002" />
             </LinearLayout>
@@ -199,22 +189,23 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/genre_txt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/cambay"
+                    android:fontFamily="@font/mada_semibold"
                     android:text="Genre: "
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/light_dark_color"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/BSH_genres"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/cambay"
+                    android:fontFamily="@font/mada"
                     android:textSize="14sp"
                     tools:text="@string/app_name" />
 
@@ -225,24 +216,22 @@
                 android:layout_height="0dp"
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/cambay"
+                    android:fontFamily="@font/mada_semibold"
                     android:text="Directors: "
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/light_dark_color"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/BSH_directors_IntH"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/cambay"
-                    android:textColor="@color/black"
-                    android:textFontWeight="100"
+                    android:fontFamily="@font/mada"
                     android:textSize="14sp"
                     tools:text="Markus Beltlake" />
 
@@ -253,7 +242,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:fontFamily="@font/cambay"
+                android:fontFamily="@font/mada_semibold"
                 android:text="About the film"
                 android:textSize="16sp"
                 android:textStyle="italic" />
@@ -264,7 +253,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:elegantTextHeight="true"
-                android:fontFamily="@font/cambay"
+                android:fontFamily="@font/mada"
                 android:textFontWeight="600"
                 android:textSize="14sp"
                 tools:maxLines="4"
@@ -279,14 +268,14 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="10dp"
-        android:fontFamily="@font/cambay"
-        android:text="Add to favourites"
-        android:textSize="16sp"
-        app:backgroundTint="@color/purple_500"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:cornerRadius="26dp"
         android:elevation="10dp"
+        android:fontFamily="@font/mada"
+        android:text="Add to favourites"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="#18205A"
+        app:cornerRadius="26dp"
         app:strokeColor="@color/purple_200"
         app:strokeWidth="2.5dp" />
 
