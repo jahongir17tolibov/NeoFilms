@@ -2,6 +2,7 @@ package com.jt17.neofilms.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
 import com.jt17.neofilms.R
 import com.jt17.neofilms.databinding.InthItemBinding
@@ -9,12 +10,6 @@ import com.jt17.neofilms.models.InTheatresModel
 import com.squareup.picasso.Picasso
 
 class InTheatersAdapter : RecyclerView.Adapter<InTheatersAdapter.ItemHolder>() {
-
-    private var onItemClickListener: ((InTheatresModel) -> Unit)? = null
-
-    fun setOnItemClickListener(listener: ((InTheatresModel) -> Unit)? = null) {
-        onItemClickListener = listener
-    }
 
     inner class ItemHolder(val b: InthItemBinding) : RecyclerView.ViewHolder(b.root) {
 
@@ -24,9 +19,12 @@ class InTheatersAdapter : RecyclerView.Adapter<InTheatersAdapter.ItemHolder>() {
             b.releaseData.text = result.releaseState
             b.genres.text = result.genres
 
-            Picasso.get().load(result.image).resize(110, 160)
+            Picasso.get().load(result.image)
+                .resize(220, 320)
                 .placeholder(R.drawable.movie_placeholder_img)
-                .onlyScaleDown().error(R.color.black).into(b.inThImage)
+                .onlyScaleDown()
+                .error(R.color.black)
+                .into(b.inThImage)
         }
     }
 
@@ -39,9 +37,7 @@ class InTheatersAdapter : RecyclerView.Adapter<InTheatersAdapter.ItemHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
         return ItemHolder(
             InthItemBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
+                LayoutInflater.from(parent.context), parent, false
             )
         )
     }
@@ -56,6 +52,17 @@ class InTheatersAdapter : RecyclerView.Adapter<InTheatersAdapter.ItemHolder>() {
             onItemClickListener?.invoke(itemData)
         }
 
+
+        holder.itemView.animation =
+            AnimationUtils.loadAnimation(holder.itemView.context, R.anim.alpha_anim)
+
+    }
+
+
+    private var onItemClickListener: ((InTheatresModel) -> Unit)? = null
+
+    fun setOnItemClickListener(listener: ((InTheatresModel) -> Unit)? = null) {
+        onItemClickListener = listener
     }
 
     override fun getItemCount(): Int = baseList.size

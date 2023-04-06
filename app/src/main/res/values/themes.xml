@@ -31,7 +31,7 @@
         <item name="colorOnCustomColor1">#ffffff</item>
         <item name="colorCustomColor1Container">#fdd6ff</item>
         <item name="colorOnCustomColor1Container">#340042</item>
-        <item name="harmonizeCustomColor1">true</item>
+        <item name="harmonizeCustomColor1">false</item>
         <item name="colorPrimaryInverse">@color/md_theme_light_inversePrimary</item>
     </style>
 
@@ -40,7 +40,7 @@
     </style>
 
     <style name="ShapedImage_idealism">
-        <item name="cornerSize">8%</item>
+        <item name="cornerSize">12dp</item>
     </style>
 
     <style name="shapedImage_dp_edition">
@@ -48,13 +48,46 @@
     </style>
 
     <style name="light_or_dark_mode">
-        <item name="android:layout_width">34dp</item>
-        <item name="android:layout_height">34dp</item>
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
         <item name="android:layout_marginEnd">14dp</item>
         <item name="android:scaleType">centerCrop</item>
         <item name="android:clickable">true</item>
         <item name="android:layout_gravity">center_vertical|end</item>
         <item name="android:src">@drawable/light_mode_svgrepo_com</item>
+    </style>
+
+    <style name="BottomSheetBackgroundStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="MyCustomizedDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorPrimary">@color/md_theme_dark_scrim</item>
+        <item name="colorSurface">@color/md_theme_dark_onBackground</item>
+        <item name="colorOnSurface">@color/md_theme_dark_background</item>
+        <item name="alertDialogStyle">@style/MaterialAlertDialog.App</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/MaterialAlertDialog.App.Title.Text
+        </item>
+        <item name="buttonBarPositiveButtonStyle">@style/Widget.App.Button</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Widget.App.Button</item>
+    </style>
+
+    <style name="MaterialAlertDialog.App" parent="MaterialAlertDialog.Material3">
+        <item name="shapeAppearance">@style/ShapeAppearance.App.MediumComponent</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+    </style>
+
+    <style name="MaterialAlertDialog.App.Title.Text" parent="MaterialAlertDialog.Material3.Title.Text.CenterStacked">
+        <item name="android:textColor">@color/md_theme_light_scrim</item>
+    </style>
+
+    <style name="Widget.App.Button" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/md_theme_dark_scrim</item>
+    </style>
+
+    <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">30dp</item>
     </style>
 
 </resources>

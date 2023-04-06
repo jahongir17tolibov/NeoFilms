@@ -3,6 +3,7 @@ package com.jt17.neofilms.ui.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
 import com.jt17.neofilms.R
 import com.jt17.neofilms.databinding.PopularMoviesItemBinding
@@ -27,7 +28,7 @@ class MostPopMoviesAdapter : RecyclerView.Adapter<MostPopMoviesAdapter.ItemHolde
 
             Picasso.get()
                 .load(result.image)
-                .resize(110, 160)
+                .resize(220, 320)
                 .onlyScaleDown()
                 .placeholder(R.drawable.movie_placeholder_img)
                 .error(R.color.black)
@@ -59,6 +60,10 @@ class MostPopMoviesAdapter : RecyclerView.Adapter<MostPopMoviesAdapter.ItemHolde
         holder.itemView.setOnClickListener {
             onItemClickListener?.invoke(itemData)
         }
+
+
+        holder.itemView.animation =
+            AnimationUtils.loadAnimation(holder.itemView.context, R.anim.alpha_anim)
 
     }
 

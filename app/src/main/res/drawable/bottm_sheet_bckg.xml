@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@color/neoFilm_secondary_background_color" />
+    <solid android:color="@color/bottom_sheet_background_color" />
     <corners
         android:topLeftRadius="16dp"
         android:topRightRadius="16dp" />
@@ -9,6 +9,6 @@
         android:right="10dp"
         android:top="10dp" />
     <stroke
-        android:width="10dp"
+        android:width="14dp"
         android:color="@android:color/transparent" />
 </shape>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="250dp"
+    android:layout_marginHorizontal="6dp"
+    android:layout_marginBottom="6dp"
+    android:background="@drawable/round_ripple_effect"
+    app:cardBackgroundColor="@color/neoFilm_main_background_color"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="10dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingHorizontal="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="6dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/box_off_image"
+            android:layout_width="110dp"
+            android:layout_height="160dp"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ShapedImage_idealism"
+            tools:background="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="4dp">
+
+            <TextView
+                android:id="@+id/box_off_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:elegantTextHeight="true"
+                android:ellipsize="end"
+                android:fontFamily="@font/mada_semibold"
+                android:maxWidth="90dp"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:textColor="@color/light_dark_color"
+                android:textSize="12dp"
+                tools:text="title and (year)" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elegantTextHeight="true"
+                android:fontFamily="@font/mada"
+                android:text="weekend : "
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/box_off_weekend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elegantTextHeight="true"
+                android:fontFamily="@font/mada_semibold"
+                android:singleLine="true"
+                android:textSize="10dp"
+                tools:text="$14.9M" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12.5dp"
+                android:elegantTextHeight="true"
+                android:text="gross : "
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/box_off_gross"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elegantTextHeight="true"
+                android:fontFamily="@font/mada_semibold"
+                android:singleLine="true"
+                android:textSize="10dp"
+                tools:text="$140.9M" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8.3dp"
+                android:elegantTextHeight="true"
+                android:text="weeks : "
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/box_off_weeks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:elegantTextHeight="true"
+                android:fontFamily="@font/mada_semibold"
+                android:textSize="10dp"
+                tools:text="1" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

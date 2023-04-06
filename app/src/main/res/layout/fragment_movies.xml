@@ -1,46 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".ui.fragments.MoviesFragment">
+    tools:context=".ui.screens.MoviesFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            style="@style/Widget.Material3.Toolbar.Surface"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="snap|scroll"
+            app:title="Movies"
+            app:titleCentered="true"
+            app:titleTextColor="@color/light_dark_color">
+
+            <FrameLayout
+                android:id="@+id/search_frame_ly"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginVertical="12dp"
+                    android:layout_marginEnd="52dp">
+
+                    <androidx.appcompat.widget.SearchView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:iconifiedByDefault="false"
+                        app:queryHint="Search movies..." />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <ImageView
+                    android:id="@+id/close_btn"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/round_close_24" />
+
+            </FrameLayout>
+
+            <ImageButton
+                android:id="@+id/search_btn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="end|center"
+                android:layout_marginEnd="10dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:backgroundTint="@android:color/transparent"
+                android:src="@drawable/round_search_24"
+                android:visibility="gone" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyc_movies"
+        android:id="@+id/main_recyc"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:overScrollMode="never"
-        tools:listitem="@layout/movies_item"
-        tools:visibility="visible" />
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/movies_fragment_items_ly" />
 
-    <com.facebook.shimmer.ShimmerFrameLayout
-        android:id="@+id/movies_shimm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:shimmer_intensity="40"
-        app:shimmer_shape="radial"
-        tools:visibility="visible">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <include layout="@layout/shimmer_ly" />
-
-            <include layout="@layout/shimmer_ly" />
-
-            <include layout="@layout/shimmer_ly" />
-
-            <include layout="@layout/shimmer_ly" />
-
-            <include layout="@layout/shimmer_ly" />
-
-        </LinearLayout>
-
-    </com.facebook.shimmer.ShimmerFrameLayout>
-
-
-</FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

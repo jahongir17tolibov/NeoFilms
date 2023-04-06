@@ -7,7 +7,8 @@ import com.jt17.neofilms.models.*
 
 @Database(
     entities = [ComingSoonModel::class, InTheatresModel::class, MostPopMoviesModel::class,
-        MostPopTVShowsModel::class, Top250MoviesModel::class, Top250ShowsModel::class],
+        BoxOfficeModel::class, MostPopTVShowsModel::class, Top250MoviesModel::class,
+        Top250ShowsModel::class, FavMoviesModel::class, FavSeriesModel::class],
     version = 1,
     exportSchema = false
 )

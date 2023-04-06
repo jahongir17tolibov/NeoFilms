@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.screens.TopShowsFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            style="@style/Widget.Material3.Toolbar.Surface"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="snap|scroll"
+            app:navigationIcon="@drawable/round_keyboard_arrow_left_24"
+            app:navigationIconTint="@color/light_dark_color"
+            app:titleCentered="true"
+            app:titleTextColor="@color/light_dark_color"
+            tools:title="Top 250 Shows">
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyc_shows"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/shows_item"
+        tools:visibility="visible" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shows_shimm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:shimmer_intensity="20"
+        app:shimmer_shape="radial"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/shimmer_ly" />
+
+            <include layout="@layout/shimmer_ly" />
+
+            <include layout="@layout/shimmer_ly" />
+
+            <include layout="@layout/shimmer_ly" />
+
+            <include layout="@layout/shimmer_ly" />
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

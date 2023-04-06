@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="20dp"
+    app:strokeColor="@color/light_dark_color"
+    app:strokeWidth="4dp">
+
+    <ImageView
+        android:id="@+id/main_background_image"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/top_movies_main" />
+
+        <TextView
+            android:id="@+id/sec_main_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/mada_light"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:paddingHorizontal="80dp"
+            android:gravity="center"
+            android:textColor="@color/light_dark_color"
+            android:textSize="26sp"
+            android:background="@color/glass"
+            android:visibility="gone"
+            tools:text="Top 250 movies sorted by ImDb" />
+
+    <FrameLayout
+        android:id="@+id/main_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        tools:ignore="RtlSymmetry"
+        tools:visibility="visible">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img1"
+            android:layout_width="90dp"
+            android:layout_height="130dp"
+            android:layout_gravity="start"
+            android:layout_margin="10dp"
+            android:background="@android:color/holo_blue_bright"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ShapedImage_idealism" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img2"
+            android:layout_width="90dp"
+            android:layout_height="130dp"
+            android:layout_gravity="start"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="76dp"
+            android:background="@android:color/holo_green_dark"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ShapedImage_idealism" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img3"
+            android:layout_width="90dp"
+            android:layout_height="130dp"
+            android:layout_gravity="start"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="146dp"
+            android:background="@android:color/holo_orange_light"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ShapedImage_idealism" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img4"
+            android:layout_width="90dp"
+            android:layout_height="130dp"
+            android:layout_gravity="start"
+            android:layout_marginVertical="10dp"
+            android:layout_marginStart="216dp"
+            android:background="@android:color/holo_red_dark"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ShapedImage_idealism" />
+
+        <FrameLayout
+            android:layout_width="288dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:background="@drawable/movies_path_texts_bckg"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp">
+
+            <TextView
+                android:id="@+id/category_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:elegantTextHeight="true"
+                android:fontFamily="@font/mada"
+                android:singleLine="true"
+                android:textColor="@color/custom_color1"
+                android:textSize="17dp"
+                tools:text="Top 250 movies sorted by 1111111111111111111" />
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</com.google.android.material.card.MaterialCardView>

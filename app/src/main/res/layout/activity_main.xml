@@ -29,10 +29,11 @@
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:itemIconSize="30dp"
-            app:labelVisibilityMode="selected"
+            android:layout_height="70dp"
             android:background="@drawable/bottom_nav_bckg"
+            app:itemIconSize="24dp"
+            app:itemActiveIndicatorStyle="@style/Widget.Material3.BottomNavigationView.ActiveIndicator"
+            app:labelVisibilityMode="selected"
             app:menu="@menu/menu" />
 
     </FrameLayout>

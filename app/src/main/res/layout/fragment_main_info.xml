@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.screens.MainInfoFragment">
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:visibility="gone" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:fitsSystemWindows="true"
+        tools:visibility="visible">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:navigationIconTint="@color/light_dark_color">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/simple_frame"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/neoFilm_main_background_color"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="26dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/star"
+                            style="@style/Star_Icon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentStart="true" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/imdbRating_movies"
+                            style="@style/Texts_inBottomOf_Title"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@id/star"
+                            android:textColor="@color/light_dark_color"
+                            android:textSize="20sp"
+                            tools:text="9.9" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_toStartOf="@id/metaScore"
+                            android:fontFamily="@font/mada_semibold"
+                            android:text="metascore"
+                            android:textSize="20sp" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/metaScore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="end"
+                            android:fontFamily="@font/mada"
+                            android:textColor="@color/light_dark_color"
+                            android:textSize="20sp"
+                            tools:text="90" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mada_semibold"
+                            android:text="content rating: "
+                            android:textColor="@color/light_dark_color"
+                            android:textSize="16sp" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/content_rating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:fontFamily="@font/mada"
+                            android:singleLine="true"
+                            android:textSize="16sp"
+                            tools:text="PG-13" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/dur_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mada_semibold"
+                            android:text="duration: "
+                            android:textColor="@color/light_dark_color"
+                            android:textSize="16sp" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/duration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:fontFamily="@font/mada"
+                            android:textSize="16sp"
+                            tools:text="2h 14min" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/stat_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/mada_semibold"
+                            android:text="status: "
+                            android:textColor="@color/light_dark_color"
+                            android:textSize="16sp" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:fontFamily="@font/mada"
+                            android:singleLine="true"
+                            android:textSize="16sp"
+                            tools:text="last eps 2023" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/main_IMG"
+                    android:layout_width="140dp"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    tools:src="@tools:sample/backgrounds/scenic" />
+
+            </LinearLayout>
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:titleCentered="true"
+                app:titleTextColor="@color/light_dark_color"
+                tools:title="Movie name or tv shows" />
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="6dp"
+                android:paddingTop="16dp">
+
+                <LinearLayout
+                    android:id="@+id/rel_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mada_semibold"
+                        android:text="Release date: "
+                        android:textColor="@color/light_dark_color"
+                        android:textSize="18sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/release_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:fontFamily="@font/mada"
+                        android:textSize="18sp"
+                        tools:text="21 december, 2023" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/genre_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rel_txt">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mada_semibold"
+                        android:text="Genres: "
+                        android:textColor="@color/light_dark_color"
+                        android:textSize="18sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/genres"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:fontFamily="@font/mada"
+                        android:singleLine="true"
+                        android:textSize="18sp"
+                        tools:text="fantastic, thriller, action" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cre_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="5dp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/genre_txt">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mada_semibold"
+                        android:text="Creators: "
+                        android:textColor="@color/light_dark_color"
+                        android:textSize="18sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/creators"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:fontFamily="@font/mada"
+                        android:singleLine="true"
+                        android:textSize="18sp"
+                        tools:text="21 december, 2023" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/dir_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/genre_txt">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mada_semibold"
+                        android:text="Directors: "
+                        android:textColor="@color/light_dark_color"
+                        android:textSize="18sp"
+                        tools:visibility="visible" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/directors"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:fontFamily="@font/mada"
+                        android:singleLine="true"
+                        android:textSize="18sp"
+                        tools:text="John Francis Daley, Jonathan Goldstein"
+                        tools:visibility="visible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/wrt_txt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dir_txt">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mada_semibold"
+                        android:text="Writers: "
+                        android:textColor="@color/light_dark_color"
+                        android:textSize="18sp"
+                        tools:visibility="visible" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/writers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:fontFamily="@font/mada"
+                        android:singleLine="true"
+                        android:textSize="18sp"
+                        tools:text="John Francis Daley, Jonathan Goldstein"
+                        tools:visibility="visible" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/about_a_film"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="6dp"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/mada"
+                android:maxLines="5"
+                android:padding="6dp"
+                android:textColor="@color/light_dark_color"
+                android:textSize="14sp"
+                tools:text="@tools:sample/lorem/random" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/md_theme_light_tertiaryContainer"
+                app:cardCornerRadius="12dp"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingVertical="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="10dp"
+                        android:elegantTextHeight="true"
+                        android:fontFamily="@font/mada_light"
+                        android:text="Cast"
+                        android:textAllCaps="true"
+                        android:textColor="@color/light_dark_color"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/cast_recyc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/cast_item_ly" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mada_semibold"
+                    android:text="Languages: "
+                    android:textColor="@color/light_dark_color"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/languages"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/mada"
+                    android:singleLine="true"
+                    android:textSize="16sp"
+                    tools:text="English" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mada_semibold"
+                    android:paddingHorizontal="6dp"
+                    android:text="Countries: "
+                    android:textColor="@color/light_dark_color"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/countries"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/mada"
+                    android:singleLine="true"
+                    android:textSize="16sp"
+                    tools:text="USA, Canada, UK, Iceland, Australia" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mada_semibold"
+                    android:paddingHorizontal="6dp"
+                    android:text="Companies: "
+                    android:textColor="@color/light_dark_color"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/companies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/mada"
+                    android:textSize="16sp"
+                    tools:text="Paramount Pictures, Entertainment One, Allspark Pictures" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/budget_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mada_semibold"
+                    android:paddingHorizontal="6dp"
+                    android:text="Budget: "
+                    android:textColor="@color/light_dark_color"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/budget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:fontFamily="@font/mada"
+                    android:textSize="16sp"
+                    tools:text="$150,000,000 (estimated)" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/opening_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mada_semibold"
+                    android:paddingHorizontal="6dp"
+                    android:text="Opening weekend gross: "
+                    android:textColor="@color/light_dark_color"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/opening_weekend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:fontFamily="@font/mada"
+                    android:textSize="16sp"
+                    tools:text="$38,500,000" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mada_semibold"
+                    android:paddingHorizontal="6dp"
+                    android:text="Gross in home: "
+                    android:textColor="@color/light_dark_color"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/gross_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:fontFamily="@font/mada"
+                    android:textSize="16sp"
+                    tools:text="$38,500,000" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/worls_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mada_semibold"
+                    android:paddingHorizontal="6dp"
+                    android:text="Worldwide gross: "
+                    android:textColor="@color/light_dark_color"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/world_gross"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:fontFamily="@font/mada"
+                    android:textSize="16sp"
+                    tools:text="$38,500,000" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mada_semibold"
+                    android:paddingHorizontal="6dp"
+                    android:text="Awards: "
+                    android:textColor="@color/light_dark_color"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/awards"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:fontFamily="@font/mada"
+                    android:textSize="16sp"
+                    tools:text="oscar |#1 nominations" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="24dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/episodes_guide"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/neoFilm_main_background_color"
+                    android:fontFamily="@font/mada_light"
+                    android:text="Episodes"
+                    android:textAllCaps="true"
+                    android:textColor="@color/light_dark_color"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    app:cornerRadius="10dp"
+                    app:strokeColor="@color/glass"
+                    app:strokeWidth="2dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/add_to_fav_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="2.3"
+                    android:backgroundTint="@color/light_dark_color"
+                    android:fontFamily="@font/mada_light"
+                    android:text="Add to favourites"
+                    android:textAllCaps="true"
+                    android:textSize="14sp"
+                    app:cornerRadius="10dp"
+                    app:strokeColor="@color/glass"
+                    app:strokeWidth="2dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -22,6 +22,7 @@ data class InTheatresModel(
     val imDbRating: String,
     val runtimeMins: String,
     val directors: String,
+    val year: String,
 
     @PrimaryKey(autoGenerate = true)
     var inThID: Int

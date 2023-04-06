@@ -1,6 +1,8 @@
 package com.jt17.neofilms.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.jt17.neofilms.models.*
 import com.jt17.neofilms.repository.AppRepository
@@ -50,6 +52,16 @@ class HomeViewModel @Inject constructor(private val appRepository: AppRepository
     fun getMostPopShowsData() = viewModelScope.launch {
         appRepository.fetchingMostPopShows().collect {
             _mostPopShowsList.value = it
+        }
+    }
+
+    private val _boxOffList =
+        MutableStateFlow<Resource<List<BoxOfficeModel>>>(Resource.Loading())
+    val boxOffList: StateFlow<Resource<List<BoxOfficeModel>>> = _boxOffList
+
+    fun getBoxOfficeMoviesData() = viewModelScope.launch {
+        appRepository.fetchingBoxOffice().collect {
+            _boxOffList.value = it
         }
     }
 

@@ -3,5 +3,16 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="in_theaters_title">Movies currently playing in theaters</string>
+    <string name="most_pop_movies_title">Movies that are popular now</string>
+    <string name="box_off_title">Current top movies box office</string>
+    <string name="top_250_movies_title">Top 250 movies sorted by ImDb</string>
+    <string name="my_fav_movies_title">My favourite movies</string>
+
+    <string name="top_250_shows_title">Top 250 TV shows sorted by ImDb</string>
+    <string name="most_pop_shows_title">TV shows that are popular now</string>
+
+    <string name="season_txt">seasons: </string>
+
 
 </resources>

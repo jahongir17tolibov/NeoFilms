@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.room.Room
 import com.jt17.neofilms.data.local.AppDatabase
 import com.jt17.neofilms.data.local.FilmsDao
+import com.jt17.neofilms.data.remote.RemoteDataSource
+import com.jt17.neofilms.repository.AppRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,7 +25,7 @@ object DataBaseModule {
             "NeoFilms.db"
         ).build()
 
-    @Provides
+    @[Provides Singleton]
     fun provideFilmsDao(appDatabase: AppDatabase): FilmsDao = appDatabase.filmsDao()
 
 }

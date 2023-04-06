@@ -5,4 +5,8 @@
     <color name="neoFilm_main_background_color">#38323A</color> <!-- for backgrounds -->
     <color name="neoFilm_secondary_background_color">#0F0912</color> <!-- for backgrounds secondary -->
     <color name="for_lines">#F2FAE0FF</color> <!-- for lines -->
+    <color name="md_theme_light_tertiaryContainer">#312831</color> <!-- for secondary main background -->
+    <color name="bottom_sheet_background_color">#F2322A35</color>
+    <color name="custom_color1">#4C444C</color>
+    <color name="save_color">#4DDDDDDD</color>
 </resources>

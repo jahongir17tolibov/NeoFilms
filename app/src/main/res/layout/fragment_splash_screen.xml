@@ -3,13 +3,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.SplashScreen">
+    tools:context=".ui.screens.SplashScreen">
 
     <ImageView
         android:id="@+id/img_screen"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_gravity="center"
-        android:src="@drawable/movie_placeholder_img" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/neofilm_icon" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="150dp"
+        android:fontFamily="@font/mada_light"
+        android:text="NeoFilms"
+        android:textColor="@color/light_dark_color"
+        android:textSize="50dp" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/linear_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginHorizontal="100dp"
+        android:layout_marginBottom="190dp"
+        android:indeterminate="true" />
 
 </FrameLayout>

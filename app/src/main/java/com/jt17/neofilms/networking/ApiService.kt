@@ -17,27 +17,64 @@ interface ApiService {
 //    ): Call<imdbApiModel<List<mainModel>>>
 
     //Coming Soon Slider Getter
-    @GET("ComingSoon/{key}")
+    @GET("API/ComingSoon/{key}")
     suspend fun getComingSoonApi(@Path("key") key: String): Response<ComingSoonInception>
 
     //In theaters Getter
-    @GET("InTheaters/{key}")
+    @GET("API/InTheaters/{key}")
     suspend fun getInTheatresApi(@Path("key") key: String): Response<InTheatersInception>
 
     //Most Popular movies Getter
-    @GET("MostPopularMovies/{key}")
+    @GET("API/MostPopularMovies/{key}")
     suspend fun getPopularMoviesApi(@Path("key") key: String): Response<PopMoviesInception>
 
     //Most Popular TVs Getter
-    @GET("MostPopularTVs/{key}")
+    @GET("API/MostPopularTVs/{key}")
     suspend fun getPopularShowsApi(@Path("key") key: String): Response<PopShowsInception>
 
+    //Box office movies Getter
+    @GET("API/BoxOffice/{key}")
+    suspend fun getBoxOfficeApi(@Path("key") key: String): Response<BoxOfficeInception>
+
     //Most Popular TVs Getter
-    @GET("Top250Movies/{key}")
+    @GET("API/Top250Movies/{key}")
     suspend fun getTop250MoviesApi(@Path("key") key: String): Response<TopMoviesInception>
 
     //Most Popular TVs Getter
-    @GET("Top250TVs/{key}")
+    @GET("API/Top250TVs/{key}")
     suspend fun getTop250TVsApi(@Path("key") key: String): Response<TopShowsInception>
+
+    @GET("API/SearchMovie/{key}/{expression}")
+    suspend fun getSearchMoviesApi(
+        @Path("key") key: String,
+        @Path("expression") expression: String?
+    ): Response<SearchModelInception>
+
+    @GET("API/SearchSeries/{key}/{expression}")
+    suspend fun getSearchSeriesApi(
+        @Path("key") key: String,
+        @Path("expression") expression: String?
+    ): Response<SearchModelInception>
+
+    @GET("{lang}/API/Title/{key}/{id}")
+    suspend fun getAllFilmsInfo(
+        @Path("lang") lang: String,
+        @Path("key") key: String,
+        @Path("id") id: String
+    ): Response<TitleModel>
+
+    @GET("{lang}/API/Wikipedia/{key}/{id}")
+    suspend fun getFilmsWikiApi(
+        @Path("lang") lang: String,
+        @Path("key") key: String,
+        @Path("id") id: String
+    ): Response<WikiModel>
+
+    @GET("API/SeasonEpisodes/{key}/{id}/{seasonNumb}")
+    suspend fun getSeasonEpsApi(
+        @Path("key") key: String,
+        @Path("id") id: String,
+        @Path("seasonNumb") seasonNumb: String
+    ): Response<SeasonModel>
 
 }

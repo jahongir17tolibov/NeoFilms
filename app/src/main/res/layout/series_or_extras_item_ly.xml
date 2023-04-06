@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="20px"
+        android:background="@color/bottom_nav_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/series_image"
+        android:layout_width="70dp"
+        android:layout_height="100dp"
+        android:layout_margin="6dp"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        app:shapeAppearanceOverlay="@style/ShapedImage_idealism"
+        tools:background="@color/black" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/title_eps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        android:fontFamily="@font/mada_semibold"
+        android:singleLine="true"
+        android:textColor="@color/light_dark_color"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/series_image"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        tools:text="S11.#1 Acheron: Part I" />
+
+    <LinearLayout
+        android:id="@+id/release_ll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/imDb_rating_ll"
+        app:layout_constraintStart_toStartOf="@id/title_eps"
+        app:layout_constraintTop_toBottomOf="@+id/title_eps">
+
+        <TextView
+            style="@style/Universal_txt"
+            android:elegantTextHeight="true"
+            android:text="released: "
+            android:textColor="@color/light_dark_color" />
+
+        <TextView
+            android:id="@+id/released_date"
+            style="@style/Universal_txt"
+            android:elegantTextHeight="true"
+            tools:text="15 Aug. 2021" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/imDb_rating_ll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/release_ll"
+        app:layout_constraintTop_toBottomOf="@+id/title_eps">
+
+        <ImageView
+            style="@style/Star_Icon"
+            android:layout_gravity="center"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/imDb_rating"
+            style="@style/Universal_txt"
+            android:elegantTextHeight="true"
+            tools:text="9.5" />
+
+    </LinearLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/plot"
+        style="@style/Universal_txt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/release_ll"
+        app:layout_constraintTop_toBottomOf="@+id/release_ll"
+        tools:text="Daryl leads a team to scavenge the military base he discovered; Maggie tells her story, prompting a new mission for survival that only Negan can lead; Eugene and his group go through assessment by the Commonwealth's paramilitary police." />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="20px"
+        android:background="@color/bottom_nav_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
